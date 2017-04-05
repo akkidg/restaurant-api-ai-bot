@@ -459,6 +459,28 @@ app.post('/webhook/', (req, res) => {
 
 });
 
+app.post('/hook',(req, res) => {
+    console.log('hook request');
+
+    try{
+
+        if(req.body){
+            var reqBody = req.body;
+            console.log(reqBody);
+        }
+
+    } catch(err){
+         console.error("Can't process request", err);
+         return res.status(400).json({
+            status: {
+                code: 400,
+                errorType: err.message
+            }
+        });
+    }   
+
+});
+
 app.listen(REST_PORT, () => {
     console.log('Rest service ready on port ' + REST_PORT);
 });
