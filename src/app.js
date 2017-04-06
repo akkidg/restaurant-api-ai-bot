@@ -470,13 +470,8 @@ app.post('/hook',(req, res) => {
 
             console.log("reqbody: " + reqBody);
 
-            console.log("intent id: " + reqBody.result.action);
-
-            /*if(reqBody.result.fulfillment){
-                console.log("is fulfillment");
-            }*/
-
             if(reqBody.result){
+                console.log("in is result block");
                 if(reqBody.result.parameters){
                     var parameters = reqBody.result.parameters;
 
@@ -492,7 +487,6 @@ app.post('/hook',(req, res) => {
                 }        
             }
 
-            console.log(reqBody);
         }
 
         return res.json({
