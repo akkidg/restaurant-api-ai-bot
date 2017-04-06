@@ -466,8 +466,33 @@ app.post('/hook',(req, res) => {
 
         if(req.body){
             var reqBody = req.body;
+
+            var speech = reqBody.parameters.fulfillment.speech;
+
+            if(reqBody.result){
+                if(reqBody.result.parameters){
+                    var parameters = reqBody.result.parameters;
+
+                    if(parameters.item_details != ""){
+
+                    } else if(parameters.specific_items != ""){
+                                    
+                    } else if(parameters.special_items != ""){
+                                  
+                    } else if(parameters.sub_menu != ""){
+                                    
+                    }
+                }        
+            }
+
             console.log(reqBody);
         }
+
+        return res.json({
+            speech: speech,
+            displayText: speech,
+            source: 'restaurant_bot_reply'
+        });
 
     } catch(err){
          console.error("Can't process request", err);
