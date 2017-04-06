@@ -467,7 +467,9 @@ app.post('/hook',(req, res) => {
         if(req.body){
             var reqBody = JSON.parse(req.body);
 
-            console.log("reqbody: " + reqBody);
+            console.log("reqbody: " + reqBody.toString());
+
+            var speech = reqBody.result.fulfillment.speech;
 
             if(reqBody.result){
                 console.log("in is result block");
