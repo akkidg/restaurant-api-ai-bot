@@ -470,7 +470,7 @@ app.post('/hook',(req, res) => {
 
             console.log("reqbody: " + reqBody);
 
-            console.log("intent id: " + reqBody.result.metadata.intentId);
+            console.log("intent id: " + reqBody.result.action);
 
             /*if(reqBody.result.fulfillment){
                 console.log("is fulfillment");
