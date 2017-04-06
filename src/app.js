@@ -414,8 +414,7 @@ let facebookBot = new FacebookBot();
 
 const app = express();
 
-//app.use(bodyParser.text({type: 'application/json'}));
-app.use(bodyParser.json());
+app.use(bodyParser.text({type: 'application/json'}));
 
 app.get('/webhook/', (req, res) => {
     if (req.query['hub.verify_token'] == FB_VERIFY_TOKEN) {
@@ -464,8 +463,9 @@ app.post('/hook',(req, res) => {
     console.log('hook request');
 
     try{
+
         if(req.body){
-            var reqBody = req.body;
+            var reqBody = JSON.parse(req.body);
 
             console.log("reqbody: " + reqBody);
 
