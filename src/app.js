@@ -468,7 +468,10 @@ app.post('/hook',(req, res) => {
             var reqBody = req.body;
 
             console.log("reqbody: " + reqBody);
-            var speech = reqBody.result.fulfillment.speech;
+
+            if(reqBody.result.fulfillment){
+                console.log("is fulfillment");
+            }
 
             if(reqBody.result){
                 if(reqBody.result.parameters){
