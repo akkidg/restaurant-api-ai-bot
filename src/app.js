@@ -470,9 +470,9 @@ app.post('/hook',(req, res) => {
 
             console.log("reqbody: " + reqBody);
 
-            if(reqBody.result.fulfillment){
+            /*if(reqBody.result.fulfillment){
                 console.log("is fulfillment");
-            }
+            }*/
 
             if(reqBody.result){
                 if(reqBody.result.parameters){
